@@ -4,14 +4,10 @@ declare(strict_types=1);
 
 namespace PasswordValidator;
 
-final class LimitCharsValidation
+final class HaveMoreThan8CharsValidation implements ValidationInterface
 {
     public function validate(string $string): bool
     {
-        if (mb_strlen($string) < 8) {
-            return false;
-        }
-
-        return true;
+        return mb_strlen($string) >= 8;
     }
 }
