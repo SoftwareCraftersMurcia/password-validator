@@ -19,16 +19,25 @@ final class PasswordValidatorTest extends TestCase
     /** @test */
     public function should_validate_password_is_longer_than_eight_chars(): void
     {
-        $password = 'aeioualkjsdf';
+        $password = 'Aeioua1_jsdf';
         $passwordValidator = new PasswordValidator();
         $this->assertTrue($passwordValidator->validate($password));
     }
 
     /** @test */
-    public function should_be_longer_than_eight_char(): void
+    public function should_not_be_valid_less_than_eight_char(): void
     {
         $password = '123';
         $passwordValidator = new PasswordValidator();
         $this->assertFalse($passwordValidator->validate($password));
     }
+
+    /** @test */
+    public function should_have_at_least_capital_letter(): void
+    {
+        $password = 'a12345678';
+        $passwordValidator = new PasswordValidator();
+        $this->assertFalse($passwordValidator->validate($password));
+    }
+
 }

@@ -6,10 +6,14 @@ namespace PasswordValidator;
 
 final class PasswordValidator
 {
+    private const MINIMUM_LENGTH = 8;
+
     public function validate(string $password): bool
     {
-        $length = mb_strlen($password);
+        $hasEnoughLength = mb_strlen($password) > self::MINIMUM_LENGTH;
 
-        return $length > 8;
+        $hasCapitalLetter = preg_match('/[A-Z]/', $password);
+
+        return $hasEnoughLength && $hasCapitalLetter;
     }
 }
