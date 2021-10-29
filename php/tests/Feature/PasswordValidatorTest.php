@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace PasswordValidator\Test\Feature;
 
+use PasswordValidator\ContainsACapitalLetterValidation;
+use PasswordValidator\ContainsALowercaseValidation;
+use PasswordValidator\ContainsANumberValidation;
 use PasswordValidator\HaveMoreThan8CharsValidation;
 use PasswordValidator\PasswordValidator;
 use PHPUnit\Framework\TestCase;
