@@ -4,8 +4,10 @@ namespace PasswordValidator;
 
 class PasswordValidator
 {
-    public function changeMe(): bool
+    public function validate(string $password): bool
     {
-        return true;
+//        if (mb_strlen($password) < 8) {
+            return false;
+//        }
     }
 }
