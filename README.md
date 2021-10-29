@@ -10,3 +10,8 @@ A valid password should meet the following requirements:
 	 - Contains a lowercase
 	 - Contains a number
 	 - Contains an underscore
+
+# Technical requirements:
+
+	- We want a method that answers if the password is valid or not.
+	- We don't want to know the reason when the password is invalid (the return value is a boolean)
