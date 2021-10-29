@@ -55,4 +55,13 @@ final class PasswordValidatorTest extends TestCase
         $passwordValidator = new PasswordValidator();
         $this->assertFalse($passwordValidator->validate($password));
     }
+
+    /** @test */
+    public function should_have_at_least_one_underscore(): void
+    {
+        $password = 'Aeioua1jsdf';
+        $passwordValidator = new PasswordValidator();
+        $this->assertFalse($passwordValidator->validate($password));
+    }
+
 }
