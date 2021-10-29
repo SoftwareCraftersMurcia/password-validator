@@ -13,4 +13,11 @@ class PasswordValidatorTest extends TestCase
 
         self::assertFalse($passwordValidator->validate('corta'));
     }
+
+    public function test_accept_more_or_equals_than_8_chars(): void
+    {
+        $passwordValidator = new PasswordValidator();
+
+        self::assertTrue($passwordValidator->validate('long_password'));
+    }
 }

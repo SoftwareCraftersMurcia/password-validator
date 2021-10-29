@@ -6,8 +6,10 @@ class PasswordValidator
 {
     public function validate(string $password): bool
     {
-//        if (mb_strlen($password) < 8) {
+        if (mb_strlen($password) < 8) {
             return false;
-//        }
+        }
+
+        return true;
     }
 }
