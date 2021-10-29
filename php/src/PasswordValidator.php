@@ -7,13 +7,17 @@ namespace PasswordValidator;
 final class PasswordValidator
 {
     private const MINIMUM_LENGTH = 8;
+    private const AT_LEAST_A_CAPITAL_LETTER = '/[A-Z]/';
+    private const AT_LEAST_A_LOWER_LETTER = '/[a-z]/';
 
     public function validate(string $password): bool
     {
         $hasEnoughLength = mb_strlen($password) > self::MINIMUM_LENGTH;
 
-        $hasCapitalLetter = preg_match('/[A-Z]/', $password);
+        $hasCapitalLetter = preg_match(self::AT_LEAST_A_CAPITAL_LETTER, $password);
 
-        return $hasEnoughLength && $hasCapitalLetter;
+        $hasLowerCaseLetter = preg_match(self::AT_LEAST_A_LOWER_LETTER, $password);
+
+        return $hasEnoughLength && $hasCapitalLetter && $hasLowerCaseLetter;
     }
 }

@@ -40,4 +40,12 @@ final class PasswordValidatorTest extends TestCase
         $this->assertFalse($passwordValidator->validate($password));
     }
 
+    /** @test */
+    public function should_have_at_one_lower_case_letter(): void
+    {
+        $password = 'A12345678';
+        $passwordValidator = new PasswordValidator();
+        $this->assertFalse($passwordValidator->validate($password));
+    }
+
 }
