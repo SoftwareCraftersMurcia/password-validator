@@ -7,14 +7,14 @@ use PHPUnit\Framework\TestCase;
 
 class PasswordValidatorTest extends TestCase
 {
-    public function test_rejects_less_than_8_chars(): void
+    public function test_returns_false_with_invalid_password_given(): void
     {
         $passwordValidator = new PasswordValidator();
 
         self::assertFalse($passwordValidator->validate('corta'));
     }
 
-    public function test_accept_more_or_equals_than_8_chars(): void
+    public function test_returns_valid_with_invalid_password_given(): void
     {
         $passwordValidator = new PasswordValidator();
 
