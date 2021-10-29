@@ -1,12 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace PasswordValidator;
 
-class PasswordValidator
+final class PasswordValidator
 {
     public function validate(string $password): bool
     {
+        $length = mb_strlen($password);
 
-        return true;
+        return $length > 8;
     }
 }
