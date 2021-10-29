@@ -1,5 +1,5 @@
 {
-    "name": "password-validator",
+    "name": "murcia-software-crafter/password-validator",
     "require": {
         "php": "^7.1"
     },
