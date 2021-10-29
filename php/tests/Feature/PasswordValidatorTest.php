@@ -18,6 +18,8 @@ class PasswordValidatorTest extends TestCase
      */
     public function test_returns_valid_with_concrete_given(): void
     {
+        self::markTestSkipped();
+
         $passwordValidator = new PasswordValidator(
             new HaveMoreThan8CharsValidation(),
             new ContainsACapitalLetterValidation(),
